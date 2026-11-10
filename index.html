@@ -1,0 +1,2219 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AR Gradnja · niskogradnja, asfalt i beton, Beograd</title>
+<meta name="description" content="AR Gradnja od 1991. gradi saobraćajnice, parkinge i infrastrukturu u Beogradu i Gornjem Milanovcu. Sopstveni asfalt, beton i mehanizacija. Pošaljite upit.">
+<link rel="canonical" href="https://sites.entro-websites.com/argradnja/">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Žuta iz logotipa AR Gradnja (#ecd92f) + asfalt */
+    --accent: #ecd92f;
+    --accent-dark: #c9b81c;
+    --accent-soft: #fbf7d4;
+    --accent-glow: rgba(236,217,47,0.16);
+
+    --ink: #131311;
+    --ink-2: #1b1b18;
+    --ink-3: #26261f;
+    --concrete: #efeee9;
+    --paper: #fafaf7;
+
+    --text: rgba(19,19,17,0.92);
+    --text-muted: rgba(19,19,17,0.68);
+    --text-faint: rgba(19,19,17,0.52);
+    --on-dark: #ffffff;
+    --on-dark-muted: rgba(255,255,255,0.72);
+    --on-dark-faint: rgba(255,255,255,0.52);
+
+    --line: rgba(19,19,17,0.12);
+    --line-dark: rgba(255,255,255,0.12);
+  }
+
+  *{ box-sizing: border-box; margin: 0; padding: 0; }
+  html{ scroll-behavior: smooth; }
+  body{
+    font-family: 'Barlow', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  img{ max-width: 100%; display: block; height: auto; }
+  a{ color: inherit; text-decoration: none; }
+  ul, ol{ list-style: none; }
+  button{ font: inherit; }
+  section[id]{ scroll-margin-top: 68px; }
+
+  h1, h2, h3, h4{
+    font-family: 'Barlow Condensed', sans-serif;
+    color: var(--ink);
+    line-height: 1;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.005em;
+  }
+  h2, h3{ text-wrap: balance; }
+  p{ color: var(--text-muted); max-width: 65ch; text-wrap: pretty; }
+  .s{ display: block; text-wrap: balance; }
+
+  .wrap{
+    width: 100%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  .section{ padding-top: 128px; padding-bottom: 128px; }
+  .dark{ background: var(--ink); color: var(--on-dark); }
+  .dark h1, .dark h2, .dark h3, .dark h4{ color: var(--on-dark); }
+  .dark p{ color: var(--on-dark-muted); }
+
+  /* Oznaka sekcije: broj + naziv, kao na tehničkom crtežu */
+  .tag{
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+  }
+  .tag b{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 24px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background: var(--ink);
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+  }
+  .dark .tag{ color: var(--on-dark-muted); }
+  .dark .tag b{ background: var(--accent); color: var(--ink); }
+
+  /* Zaglavlje sekcije: tag, naslov i tekst jedno ispod drugog, centrirano */
+  .section-head{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 880px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 64px;
+  }
+  .section-head h2{ font-size: clamp(40px, 5vw, 72px); margin-bottom: 24px; }
+  .section-head p{ font-size: 20px; margin-left: auto; margin-right: auto; }
+
+  /* Žuti „marker" ispod ključne reči */
+  .mark{
+    background: linear-gradient(transparent 62%, var(--accent) 62%, var(--accent) 92%, transparent 92%);
+  }
+  .dark .mark{ background: none; color: var(--accent); }
+
+  /* DUGMAD: primary (žuto), secondary (obrub), tertiary (tekst + strelica) */
+  .btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    line-height: 1;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 32px;
+    padding-right: 32px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .btn svg{ width: 20px; height: 20px; stroke: currentColor; flex-shrink: 0; transition: transform 0.2s ease; }
+  .btn-primary{ background: var(--accent); color: var(--ink); border-color: var(--accent); }
+  .btn-secondary{ background: transparent; color: var(--ink); border-color: var(--ink); }
+  .dark .btn-secondary{ color: #fff; border-color: rgba(255,255,255,0.48); }
+  .btn-tertiary, .hero-call{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: none;
+    border: none;
+    border-bottom: 2px solid var(--accent);
+    padding-top: 8px;
+    padding-bottom: 8px;
+    cursor: pointer;
+  }
+  .btn-tertiary svg{ width: 20px; height: 20px; stroke: currentColor; transition: transform 0.2s ease; }
+  .dark .btn-tertiary{ color: #fff; }
+  @media (hover: hover){
+    .btn:hover svg, .btn-tertiary:hover svg, .hero-call:hover svg{ transform: translateX(4px); }
+    .btn-primary:hover{ background: var(--ink); color: var(--accent); border-color: var(--ink); box-shadow: 0 16px 32px -16px rgba(19,19,17,0.5); }
+    .dark .btn-primary:hover{ background: #fff; color: var(--ink); border-color: #fff; }
+    .btn-secondary:hover{ background: var(--ink); color: var(--accent); }
+    .dark .btn-secondary:hover{ background: #fff; color: var(--ink); border-color: #fff; }
+  }
+
+  /* Traka upozorenja (žuto-crne kose linije) */
+  .hazard{
+    height: 16px;
+    background: repeating-linear-gradient(-45deg, var(--accent) 0 16px, var(--ink) 16px 32px);
+  }
+
+  /* HEADER */
+  header{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250,250,247,0.96);
+    border-bottom: 1px solid var(--line);
+    transition: background 0.2s ease;
+  }
+  header.scrolled{
+    background: rgba(250,250,247,0.84);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .nav-wrap{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  .logo{ display: block; position: relative; }
+  .logo img{ height: 44px; width: auto; }
+  .logo .logo-light{ position: absolute; left: 0; top: 0; opacity: 0; transition: opacity 0.2s ease; }
+  body.menu-open .logo .logo-light{ opacity: 1; }
+  body.menu-open .logo .logo-dark{ opacity: 0; }
+  nav.desktop-nav{ display: flex; align-items: center; gap: 32px; }
+  nav.desktop-nav a{
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text);
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease;
+  }
+  nav.desktop-nav a:hover{ border-color: var(--accent); }
+  .header-cta{ display: flex; align-items: center; gap: 24px; }
+  .header-phone{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .header-phone svg{ width: 20px; height: 20px; stroke: var(--ink); }
+  .header-cta .btn{ padding-top: 12px; padding-bottom: 12px; padding-left: 20px; padding-right: 20px; font-size: 16px; }
+
+  .hamburger{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 8px;
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 200;
+  }
+  .hamburger span{ display: block; height: 2px; width: 28px; background: var(--ink); transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease; }
+  .hamburger span:nth-child(2){ width: 20px; }
+  .hamburger.open span{ width: 28px; }
+  .hamburger.open span:nth-child(1){ transform: translateY(10px) rotate(45deg); }
+  .hamburger.open span:nth-child(2){ opacity: 0; }
+  .hamburger.open span:nth-child(3){ transform: translateY(-10px) rotate(-45deg); }
+
+  .mobile-menu{
+    position: fixed;
+    inset: 0;
+    z-index: 150;
+    background: var(--ink);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    padding-top: 96px;
+    padding-bottom: 40px;
+    padding-left: 32px;
+    padding-right: 32px;
+    transform: translateX(100%);
+    visibility: hidden;
+    transition: transform 0.35s ease, visibility 0s linear 0.35s;
+  }
+  .mobile-menu.open{ transform: translateX(0); visibility: visible; transition: transform 0.35s ease, visibility 0s; }
+  .mobile-menu a.mm-link{
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  .mobile-menu .btn{ margin-top: 16px; align-self: flex-start; }
+  .mobile-menu a.mm-phone{
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--on-dark-muted);
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  .mobile-menu a.mm-phone b{ color: #fff; }
+  body.menu-open .hamburger span{ background: #fff; }
+  body.menu-open header{ z-index: 160; background: transparent; border-bottom-color: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; }
+
+  @media (max-width: 1180px){
+    .header-phone{ display: none; }
+  }
+  @media (max-width: 991px){
+    nav.desktop-nav, .header-cta{ display: none; }
+    .hamburger{ display: flex; }
+  }
+
+  /* HERO */
+  .hero{
+    position: relative;
+    overflow: hidden;
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+  /* Milimetarski papir u pozadini, kao na projektu */
+  .hero::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+  }
+  .hero::after{
+    content: '';
+    position: absolute;
+    right: -200px;
+    top: -120px;
+    width: 720px;
+    height: 720px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, rgba(236,217,47,0) 64%);
+    pointer-events: none;
+  }
+  .hero-grid{
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1.05fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .hero-grid > *{ min-width: 0; }
+  .hero-media{ order: 2; }
+  .hero-kicker{
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+  }
+  .hero-kicker .k2{ margin-left: -8px; }
+  .hero-kicker::before{ content: ''; width: 40px; height: 2px; background: var(--accent); flex-shrink: 0; }
+  /* H1 uvek u tačno dva reda: svaki red je nowrap, a veličina prati širinu kolone */
+  .hero-copy{ container-type: inline-size; }
+  .hero h1{
+    font-size: clamp(40px, 6vw, 88px);
+    font-size: clamp(40px, 15cqi, 112px);
+    font-weight: 800;
+    line-height: 0.92;
+    margin-bottom: 32px;
+  }
+  .hero h1 span{ display: block; white-space: nowrap; }
+  .hero h1 .hl{ color: var(--accent); }
+  .hero .lead{ font-size: 20px; max-width: 48ch; margin-bottom: 40px; }
+  .hero-actions{ display: flex; flex-wrap: wrap; align-items: center; gap: 32px; }
+  .hero-call{ color: #fff; white-space: nowrap; line-height: 1.2; }
+  .hero-call small{
+    display: block;
+    font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--on-dark-faint);
+  }
+
+  /* Hero fotografija sa kotama: kote se iscrtaju po ivici, odsjaj na 9 s */
+  .hero-media{
+    position: relative;
+    padding-top: 40px;
+    padding-left: 40px;
+  }
+  .kota{
+    position: absolute;
+    color: var(--on-dark-faint);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .kota-h{ left: 40px; right: 0; top: 0; height: 24px; }
+  .kota-h .ln{
+    position: absolute; left: 0; right: 0; top: 16px; height: 1px;
+    background: rgba(255,255,255,0.48);
+    transform-origin: left;
+  }
+  .kota-h .ln::before, .kota-h .ln::after{
+    content: ''; position: absolute; top: -8px; width: 1px; height: 16px; background: rgba(255,255,255,0.48);
+  }
+  .kota-h .ln::before{ left: 0; } .kota-h .ln::after{ right: 0; }
+  .kota-h .lbl{
+    position: absolute; left: 50%; top: 0; transform: translateX(-50%);
+    background: var(--ink); padding-left: 12px; padding-right: 12px; line-height: 32px; top: 0; white-space: nowrap;
+  }
+  .kota-v{ left: 0; top: 40px; bottom: 56px; width: 24px; }
+  .kota-v .ln{
+    position: absolute; top: 0; bottom: 0; left: 16px; width: 1px;
+    background: rgba(255,255,255,0.48);
+    transform-origin: top;
+  }
+  .kota-v .ln::before, .kota-v .ln::after{
+    content: ''; position: absolute; left: -8px; height: 1px; width: 16px; background: rgba(255,255,255,0.48);
+  }
+  .kota-v .ln::before{ top: 0; } .kota-v .ln::after{ bottom: 0; }
+  .hero-photo{
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+    background: var(--ink-3);
+  }
+  .hero-photo img{ width: 100%; height: 100%; object-fit: cover; }
+  .hero-photo::before, .hero-photo::after{
+    content: '';
+    position: absolute;
+    z-index: 3;
+    width: 24px;
+    height: 24px;
+    border-color: var(--accent);
+    border-style: solid;
+  }
+  .hero-photo::before{ top: 0; left: 0; border-width: 4px 0 0 4px; }
+  .hero-photo::after{ bottom: 0; right: 0; border-width: 0 4px 4px 0; }
+  .sheen{
+    position: absolute; inset: 0; z-index: 2; pointer-events: none;
+    background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.28) 50%, transparent 60%);
+    transform: translateX(-110%);
+  }
+  .hero-media figcaption{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+    font-size: 16px;
+    color: var(--on-dark-muted);
+  }
+  .hero-media figcaption::before{ content: ''; width: 24px; height: 2px; background: var(--accent); flex-shrink: 0; }
+
+  .js .kota-h .ln{ transform: scaleX(0); }
+  .js .kota-v .ln{ transform: scaleY(0); }
+  .js .kota .lbl{ opacity: 0; }
+  .js .hero-media.drawn .kota-h .ln{ transform: none; transition: transform 1.2s cubic-bezier(.6,0,.2,1) 0.2s; }
+  .js .hero-media.drawn .kota-v .ln{ transform: none; transition: transform 1s cubic-bezier(.6,0,.2,1) 0.6s; }
+  .js .hero-media.drawn .kota .lbl{ opacity: 1; transition: opacity 0.6s ease 1.2s; }
+  .hero-media.drawn .sheen{ animation: sheen 10s ease-in-out 8s infinite; }
+  @keyframes sheen{
+    0%{ transform: translateX(-110%); }
+    12%{ transform: translateX(110%); }
+    100%{ transform: translateX(110%); }
+  }
+
+  /* Brojke u dnu heroja */
+  .hero-stats{
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 96px;
+    border-top: 1px solid var(--line-dark);
+  }
+  .hero-stat{ padding-top: 32px; padding-right: 32px; min-width: 0; }
+  .hero-stat + .hero-stat{ padding-left: 32px; border-left: 1px solid var(--line-dark); }
+  .hero-stat strong{
+    display: block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(48px, 5.2vw, 80px);
+    font-weight: 800;
+    line-height: 1;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .hero-stat strong i{ font-style: normal; color: var(--accent); }
+  .hero-stat span{ font-size: 16px; color: var(--on-dark-muted); display: block; max-width: 28ch; }
+
+  /* TRAKA SA KLIJENTIMA */
+  .clients{
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+  .clients-row{ display: flex; align-items: center; gap: 48px; }
+  .clients-label{
+    flex-shrink: 0;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+    line-height: 1.2;
+    padding-right: 32px;
+    border-right: 2px solid var(--accent);
+  }
+  .marquee{
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  }
+  .marquee-track{
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    width: max-content;
+    animation: slide 48s linear infinite;
+  }
+  .marquee-track img{
+    height: 48px;
+    width: auto;
+    max-width: 160px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.76;
+  }
+  .marquee-track img.tall{ height: 64px; }
+  @keyframes slide{ to{ transform: translateX(calc(-50% - 32px)); } }
+
+  /* USLUGE */
+  .services{ background: var(--paper); }
+  .services-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 2px solid var(--ink);
+  }
+  .service{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 32px;
+    padding-right: 32px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: var(--paper);
+    transition: background 0.25s ease;
+  }
+  .service:first-child{ border-left: 1px solid var(--line); }
+  .service::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -2px;
+    height: 4px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  @media (hover: hover){
+    .service:hover{ background: #fff; }
+    .service:hover::before{ transform: scaleX(1); }
+  }
+  .service-num{
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-faint);
+    letter-spacing: 0.12em;
+    margin-bottom: 32px;
+  }
+  .service-icon{
+    width: 64px;
+    height: 64px;
+    background: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 32px;
+  }
+  .service-icon svg{ width: 32px; height: 32px; stroke: var(--accent); }
+  .service h3{ font-size: 32px; margin-bottom: 16px; }
+  .service p{ font-size: 16px; margin-bottom: 24px; }
+  .service ul{ display: flex; flex-direction: column; gap: 8px; margin-bottom: 32px; }
+  .service li{
+    display: flex;
+    gap: 12px;
+    align-items: baseline;
+    font-size: 16px;
+    color: var(--text);
+  }
+  .service li::before{ content: ''; width: 8px; height: 8px; background: var(--accent); flex-shrink: 0; transform: translateY(-2px); }
+  .park-link{ display: inline-block; padding-top: 12px; padding-bottom: 8px; border-bottom: 2px solid var(--accent); font-weight: 600; }
+  .service .btn-tertiary{ margin-top: auto; align-self: flex-start; font-size: 16px; }
+
+  .also{
+    display: flex;
+    gap: 24px;
+    align-items: baseline;
+    margin-top: 40px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--line);
+  }
+  .also h3{ font-size: 20px; flex-shrink: 0; letter-spacing: 0.08em; }
+  .also p{ font-size: 16px; color: var(--text); max-width: none; }
+
+  .prod-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 40px; }
+  .prod-grid .shot{ aspect-ratio: 16 / 9; }
+  .services-note{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    margin-top: 48px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background: var(--ink);
+  }
+  .services-note p{ color: #fff; font-size: 20px; max-width: 56ch; }
+  .services-note p b{ color: var(--accent); font-weight: 600; }
+
+  /* UPIT - forma u tri koraka */
+  .quote{ position: relative; background: var(--concrete); }
+  .quote::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(19,19,17,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(19,19,17,0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+  }
+  .quote .wrap{
+    position: relative;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    grid-template-areas: "intro form" "aside form";
+    grid-template-rows: auto 1fr;
+    column-gap: 80px;
+    align-items: start;
+  }
+  .quote .wrap > *{ min-width: 0; }
+  .quote-intro{ grid-area: intro; }
+  .quote-aside{ grid-area: aside; }
+  .form-card{ grid-area: form; }
+  .quote-intro h2{ font-size: clamp(40px, 5vw, 72px); margin-bottom: 24px; }
+  .quote-intro > p{ font-size: 20px; margin-bottom: 48px; }
+  .after{
+    display: flex;
+    flex-direction: column;
+    border-left: 2px solid var(--ink);
+    margin-bottom: 48px;
+  }
+  .after li{ position: relative; padding-left: 32px; padding-bottom: 24px; }
+  .after li:last-child{ padding-bottom: 0; }
+  .after li::before{
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    background: var(--accent);
+    border: 2px solid var(--ink);
+  }
+  .after h3{ font-size: 20px; margin-bottom: 4px; }
+  .after p{ font-size: 16px; }
+  .direct{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 40px;
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+  }
+  .direct a{ display: flex; align-items: center; gap: 12px; min-width: 0; }
+  .direct svg{ width: 24px; height: 24px; stroke: var(--ink); flex-shrink: 0; }
+  .direct small{ display: block; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-faint); font-weight: 600; }
+  .direct span{ font-family: 'Barlow Condensed', sans-serif; font-size: 24px; font-weight: 700; color: var(--ink); line-height: 1.2; overflow-wrap: anywhere; }
+
+  .form-card{
+    background: #fff;
+    border-top: 8px solid var(--accent);
+    box-shadow: 0 40px 80px -40px rgba(19,19,17,0.36);
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+  .progress{ margin-bottom: 40px; }
+  .progress-steps{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 12px; }
+  .progress-steps span{ height: 4px; background: var(--line); transition: background 0.3s ease; }
+  .progress-steps span.done{ background: var(--ink); }
+  .progress-steps span.active{ background: var(--accent); }
+  .progress-text{
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+  }
+  .progress-text b{ color: var(--ink); }
+
+  .step{ border: none; min-width: 0; }
+  .step + .step{ margin-top: 48px; }
+  .js .step + .step{ margin-top: 0; }
+  .js .step:not(.active){ display: none; }
+  .step legend{
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--ink);
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+  .step-hint{ font-size: 16px; margin-bottom: 24px; }
+  .js .step.active{ animation: stepIn 0.35s ease; }
+  @keyframes stepIn{ from{ transform: translateX(12px); } to{ transform: none; } }
+
+  .choices{ display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .choice{ position: relative; min-width: 0; }
+  .choice input{ position: absolute; opacity: 0; pointer-events: none; }
+  .choice label{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-height: 72px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border: 2px solid var(--line);
+    background: var(--paper);
+    cursor: pointer;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--ink);
+    line-height: 1.1;
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+  .choice label svg{ width: 28px; height: 28px; stroke: var(--ink); flex-shrink: 0; }
+  .choice label::after{
+    content: '';
+    margin-left: auto;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--line);
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+  }
+  .choice input[type="radio"] + label::after{ border-radius: 50%; }
+  @media (hover: hover){ .choice label:hover{ border-color: var(--ink); } }
+  .choice input:checked + label{ border-color: var(--ink); background: var(--accent-soft); }
+  .choice input:checked + label::after{ background: var(--ink); border-color: var(--ink); box-shadow: inset 0 0 0 4px var(--accent); }
+  .choice input:focus-visible + label{ outline: 2px solid var(--ink); outline-offset: 2px; }
+
+  .chips{ display: flex; flex-wrap: wrap; gap: 8px; }
+  .chips .choice label{
+    min-height: 44px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
+    font-size: 16px;
+  }
+  .chips .choice label::after{ display: none; }
+  .chips .choice input:checked + label{ background: var(--ink); color: var(--accent); }
+
+  .field{ display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; min-width: 0; }
+  .field-row{ display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .field-label{
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .field-label em{ font-style: normal; color: var(--text-faint); font-weight: 500; letter-spacing: 0.04em; text-transform: none; font-family: 'Barlow', sans-serif; }
+  .field input, .field textarea{
+    width: 100%;
+    font-family: 'Barlow', sans-serif;
+    font-size: 16px;
+    color: var(--ink);
+    background: var(--paper);
+    border: 2px solid var(--line);
+    border-radius: 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+  .field input::placeholder, .field textarea::placeholder{ color: var(--text-faint); }
+  .field input:focus, .field textarea:focus{ outline: none; border-color: var(--ink); background: #fff; }
+  .field textarea{ min-height: 112px; resize: vertical; }
+  .field.invalid input{ border-color: #b3261e; }
+  .form-error{ display: none; font-size: 16px; font-weight: 600; color: #b3261e; margin-top: 16px; }
+  .form-error.show{ display: block; }
+
+  .form-nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+  }
+  .form-nav .btn-tertiary svg{ transform: rotate(180deg); }
+  @media (hover: hover){ .form-nav .btn-tertiary:hover svg{ transform: rotate(180deg) translateX(4px); } }
+  .form-nav [hidden]{ display: none; }
+  .form-nav .spacer{ flex: 1; }
+  .no-js-submit{ margin-top: 40px; }
+  .js .no-js-submit{ display: none; }
+  html:not(.js) .form-nav, html:not(.js) .progress{ display: none; }
+
+  .form-done{ display: none; }
+  .form-done.show{ display: block; }
+  .form-done .done-icon{
+    width: 64px;
+    height: 64px;
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+  .form-done .done-icon svg{ width: 32px; height: 32px; stroke: var(--ink); }
+  .form-done h3{ font-size: 40px; margin-bottom: 16px; }
+  .form-done p{ font-size: 16px; margin-bottom: 24px; }
+  .form-done p a{ color: var(--ink); font-weight: 700; border-bottom: 2px solid var(--accent); }
+
+  /* KAKO NASTAJE PUT: presek se slaže sloj po sloj sa skrolom */
+  .road-wrap{
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .road-wrap > *{ min-width: 0; }
+  .road-fig{
+    position: sticky;
+    top: 112px;
+    border: 1px solid var(--line-dark);
+    background: rgba(255,255,255,0.02);
+    padding-top: 24px;
+    padding-bottom: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .road-fig::before, .road-fig::after{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-color: var(--accent);
+    border-style: solid;
+  }
+  .road-fig::before{ top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+  .road-fig::after{ bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+  .drawing-top{
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--on-dark-faint);
+    margin-bottom: 12px;
+  }
+  .road-fig svg{ width: 100%; height: auto; display: block; }
+  .road-fig .layer{ transition: transform 0.7s cubic-bezier(.3,.7,.2,1), opacity 0.5s ease; }
+  .js .road-fig .layer{ transform: translateY(-40px); opacity: 0; }
+  .js .road-fig .layer.on{ transform: none; opacity: 1; }
+  .road-fig .lbl-n{ transition: opacity 0.4s ease; }
+  .js .road-fig .lbl-n{ opacity: 0.2; }
+  .js .road-fig .lbl-n.on{ opacity: 1; }
+
+  .road-steps{ display: flex; flex-direction: column; }
+  .road-step{
+    position: relative;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 72px;
+    border-top: 1px solid var(--line-dark);
+    transition: opacity 0.4s ease;
+  }
+  .road-step:last-child{ border-bottom: 1px solid var(--line-dark); }
+  .js .road-step{ opacity: 0.48; }
+  .js .road-step.on{ opacity: 1; }
+  .road-step b{
+    position: absolute;
+    left: 0;
+    top: 40px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .road-step.on b{ background: var(--accent); color: var(--ink); }
+  .road-step h3{ font-size: 32px; margin-bottom: 12px; }
+  .road-step p{ font-size: 16px; }
+  .road-step .m{
+    display: block;
+    margin-top: 12px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  /* MEHANIZACIJA */
+  .fleet{ background: var(--concrete); }
+  .fleet-grid{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .fleet-card{
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    background: #fff;
+    border-top: 4px solid var(--accent);
+  }
+  .fleet-card img{ width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+  .fleet-body{ padding-top: 32px; padding-bottom: 32px; padding-left: 32px; padding-right: 32px; }
+  .fleet-card h3{ font-size: 28px; margin-bottom: 16px; }
+  .fleet-card ul{ display: flex; flex-wrap: wrap; gap: 8px; }
+  .fleet-card li{
+    font-size: 16px;
+    color: var(--ink);
+    background: var(--concrete);
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  /* REFERENCE */
+  .gallery-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 240px;
+    gap: 16px;
+  }
+  .gallery-grid .big{ grid-column: span 2; grid-row: span 2; }
+  .gallery-grid .wide{ grid-column: span 2; }
+  .shot{
+    position: relative;
+    overflow: hidden;
+    background: var(--concrete);
+    margin: 0;
+    min-width: 0;
+  }
+  .shot img{ position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+  @media (hover: hover){ .shot:hover img{ transform: scale(1.04); } }
+  .shot figcaption{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding-top: 48px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    background: linear-gradient(transparent, rgba(19,19,17,0.84));
+  }
+  .shot figcaption small{
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    background: var(--accent);
+    color: var(--ink);
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .shot figcaption span{
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  .ref-list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 80px;
+    padding-top: 40px;
+    border-top: 2px solid var(--ink);
+  }
+  .ref-list > div{ min-width: 0; }
+  .ref-list h3{ font-size: 24px; margin-bottom: 16px; }
+  .ref-list li{
+    display: flex;
+    gap: 12px;
+    align-items: baseline;
+    font-size: 16px;
+    color: var(--ink);
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+  }
+  .ref-list li::before{ content: ''; width: 8px; height: 8px; background: var(--accent); flex-shrink: 0; transform: translateY(-2px); }
+  .ref-more{
+    margin-top: 40px;
+    text-align: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .ref-more b{ background: var(--accent); padding-left: 8px; padding-right: 8px; }
+
+  .quote-card{
+    max-width: 720px;
+    margin-top: 64px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  .quote-card .stars{ display: flex; justify-content: center; gap: 4px; margin-bottom: 16px; }
+  .quote-card .stars svg{ width: 20px; height: 20px; fill: var(--accent); stroke: var(--ink); stroke-width: 1; }
+  .quote-card blockquote{
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 600;
+    line-height: 1.12;
+    color: var(--ink);
+    text-wrap: balance;
+    margin-bottom: 16px;
+  }
+  .quote-card cite{ font-style: normal; font-size: 16px; color: var(--text-muted); }
+  .quote-card cite b{ color: var(--ink); }
+
+  /* O NAMA */
+  .about{ background: #fff; }
+  .about .wrap{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .about .wrap > *{ min-width: 0; }
+  .about .wrap.gm-wrap{ display: block; }
+  .about-photo{ position: relative; height: 560px; overflow: hidden; background: var(--concrete); }
+  .about-photo img{ width: 100%; height: 100%; object-fit: cover; }
+  .about-text h2{ font-size: clamp(40px, 4.4vw, 64px); margin-bottom: 32px; }
+  .about-text > p{ font-size: 20px; margin-bottom: 20px; }
+
+  .gm{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 96px;
+    background: var(--ink);
+  }
+  .gm > *{ min-width: 0; }
+  .gm img{ width: 100%; height: 100%; min-height: 320px; object-fit: cover; }
+  .gm-text{ padding-top: 56px; padding-bottom: 56px; padding-left: 56px; padding-right: 56px; }
+  .gm-tag{ display: block; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--on-dark-faint); margin-bottom: 8px; }
+  .gm-text h3{ font-size: clamp(32px, 3.2vw, 48px); color: #fff; margin-bottom: 8px; }
+  .gm-text .slogan{
+    display: block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+  }
+  .gm-text p{ color: var(--on-dark-muted); font-size: 16px; }
+
+  /* ZAVRŠNI CTA */
+  .final{ position: relative; overflow: hidden; }
+  .final::after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -360px;
+    width: 960px;
+    height: 640px;
+    transform: translateX(-50%);
+    background: radial-gradient(ellipse, var(--accent-glow) 0%, rgba(236,217,47,0) 64%);
+    pointer-events: none;
+  }
+  .final .wrap{ position: relative; z-index: 2; text-align: center; }
+  .final h2{ font-size: clamp(48px, 7vw, 104px); line-height: 0.92; margin-bottom: 32px; }
+  .final p{ font-size: 20px; margin-left: auto; margin-right: auto; margin-bottom: 48px; max-width: 52ch; }
+  .final-actions{ display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; }
+  .final-contacts{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 96px;
+    border-top: 1px solid var(--line-dark);
+    text-align: left;
+  }
+  .final-contacts > *{
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    min-width: 0;
+    padding-top: 32px;
+    padding-right: 24px;
+  }
+  .final-contacts > * + *{ padding-left: 32px; border-left: 1px solid var(--line-dark); }
+  .final-contacts svg{ width: 24px; height: 24px; stroke: var(--accent); flex-shrink: 0; margin-top: 4px; }
+  .final-contacts small{ display: block; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; color: var(--on-dark-faint); margin-bottom: 4px; }
+  .final-contacts span{ display: block; font-family: 'Barlow Condensed', sans-serif; font-size: 24px; font-weight: 700; line-height: 1.2; color: #fff; overflow-wrap: anywhere; }
+  .final-contacts em{ display: block; font-style: normal; font-size: 16px; color: var(--on-dark-muted); margin-top: 4px; }
+
+  /* FOOTER */
+  footer{ background: #0c0c0b; padding-top: 48px; padding-bottom: 48px; }
+  .footer-wrap{
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 32px;
+  }
+  .footer-logo{ display: block; padding-top: 4px; padding-bottom: 4px; }
+  .footer-logo img{ height: 40px; width: auto; }
+  footer nav{ display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 24px; }
+  footer nav a{ display: inline-flex; align-items: center; justify-content: center; min-height: 44px; min-width: 44px; padding-left: 4px; padding-right: 4px; font-size: 16px; color: var(--on-dark-muted); transition: color 0.2s ease; }
+  footer nav a:hover{ color: var(--accent); }
+  footer p{ font-size: 16px; color: var(--on-dark-faint); max-width: none; }
+  .footer-info{ text-align: right; }
+
+  /* MOBILNA TRAKA ZA AKCIJU */
+  .mobile-bar{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 90;
+    display: none;
+    grid-template-columns: auto 1fr;
+    background: var(--ink);
+    border-top: 4px solid var(--accent);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+  .mobile-bar.show{ transform: none; }
+  .mobile-bar a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .mobile-bar svg{ width: 20px; height: 20px; stroke: currentColor; }
+  .mobile-bar .mb-call{ color: #fff; border-right: 1px solid var(--line-dark); }
+  .mobile-bar .mb-quote{ background: var(--accent); color: var(--ink); }
+
+  /* REVEAL: sadržaj je uvek vidljiv, JS samo dodaje mali pomeraj */
+  .reveal{ transition: transform 0.7s ease; }
+  .js .reveal:not(.is-visible){ transform: translateY(12px); }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    .reveal, .road-fig .layer, .road-step, .kota .ln, .kota .lbl{ transition: none !important; }
+    .js .reveal:not(.is-visible){ transform: none; }
+    .js .road-fig .layer{ transform: none; opacity: 1; }
+    .js .road-fig .lbl-n, .js .road-step{ opacity: 1; }
+    .js .kota-h .ln, .js .kota-v .ln{ transform: none; }
+    .js .kota .lbl{ opacity: 1; }
+    .hero-media.drawn .sheen{ animation: none; }
+    .js .step.active{ animation: none; }
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 1100px){
+    .services-grid{ grid-template-columns: repeat(2, 1fr); }
+    .service:nth-child(3){ border-left: 1px solid var(--line); }
+    .quote .wrap{ grid-template-columns: 1fr; grid-template-areas: "intro" "form" "aside"; grid-template-rows: auto; }
+    .quote-intro > p{ margin-bottom: 40px; }
+    .quote-aside{ margin-top: 56px; }
+    .final-contacts{ grid-template-columns: repeat(2, 1fr); }
+    .final-contacts > :nth-child(3){ padding-left: 0; border-left: none; }
+    .final-contacts > :nth-child(n+3){ border-top: 1px solid var(--line-dark); margin-top: 24px; }
+  }
+  @media (max-width: 900px){
+    .hero-grid{ grid-template-columns: 1fr; gap: 48px; }
+    .hero-media{ order: 0; padding-left: 0; }
+    .kota-h{ left: 0; }
+    .kota-v{ display: none; }
+    .road-wrap{ grid-template-columns: 1fr; gap: 48px; }
+    .road-fig{ position: relative; top: 0; }
+    .fleet-grid{ grid-template-columns: 1fr; max-width: 560px; margin-left: auto; margin-right: auto; }
+    .gallery-grid{ grid-template-columns: repeat(2, 1fr); grid-auto-rows: 200px; }
+    .ref-list{ grid-template-columns: 1fr 1fr; }
+    .about .wrap{ grid-template-columns: 1fr; gap: 48px; }
+    .about-photo{ height: 400px; }
+    .gm{ grid-template-columns: 1fr; }
+    .gm img{ min-height: 0; aspect-ratio: 16 / 9; height: auto; }
+    .services-note{ flex-direction: column; align-items: center; text-align: center; }
+    .footer-wrap{ grid-template-columns: 1fr; justify-items: center; text-align: center; }
+    .footer-info{ text-align: center; }
+  }
+  @media (max-width: 768px){
+    .wrap{ padding-left: 20px; padding-right: 20px; }
+    .section{ padding-top: 80px; padding-bottom: 80px; }
+    section[id]{ scroll-margin-top: 64px; }
+    .hero{ padding-top: 24px; padding-bottom: 64px; }
+    .hero-grid{ gap: 32px; }
+    .hero-media{ order: 0; padding-left: 0; padding-top: 32px; }
+    .kota-h{ left: 0; }
+    .kota-v{ display: none; }
+    .hero-photo{ aspect-ratio: 16 / 9; }
+    .hero-media figcaption{ font-size: 12px; margin-top: 8px; letter-spacing: 0.04em; }
+    .hero-kicker{ margin-bottom: 16px; }
+    .hero-kicker .k2{ display: none; }
+    .hero h1{ margin-bottom: 20px; }
+    .hero .lead{ margin-bottom: 32px; }
+    .hero .lead, .section-head p, .quote-intro > p, .about-text > p, .final p, .services-note p{ font-size: 16px; }
+    .hero-actions{ gap: 20px; }
+    .hero-stats{ margin-top: 48px; }
+    .hero-stat{ padding-top: 20px; padding-right: 8px; text-align: center; }
+    .hero-stat + .hero-stat{ padding-left: 8px; }
+    .hero-stat strong{ font-size: clamp(24px, 7vw, 28px); }
+    .hero-stat span{ font-size: 12px; line-height: 1.4; margin-left: auto; margin-right: auto; }
+    .clients-row{ flex-direction: column; align-items: center; gap: 24px; }
+    .clients-label{ border-right: none; padding-right: 0; border-bottom: 2px solid var(--accent); padding-bottom: 8px; }
+    .marquee{ width: 100%; flex: none; }
+    .services-grid{ grid-template-columns: 1fr; }
+    .service{ border-left: 1px solid var(--line); padding-top: 28px; padding-bottom: 28px; padding-left: 24px; padding-right: 24px; display: grid; grid-template-columns: 56px 1fr; column-gap: 20px; }
+    .service > *:not(.service-icon){ grid-column: 1 / -1; }
+    .service > h3:not(.service-icon){ grid-column: 2; grid-row: 1; align-self: center; margin-bottom: 0; }
+    .service > p{ margin-top: 16px; }
+    .service-num{ display: none; }
+    .service ul{ gap: 4px; }
+    .service li{ font-size: 16px; line-height: 1.4; }
+    .service-icon{ width: 56px; height: 56px; margin-bottom: 0; grid-column: 1; grid-row: 1; }
+    .service h3{ font-size: 28px; }
+    .service p{ margin-bottom: 16px; }
+    .service ul{ margin-bottom: 20px; }
+    .also{ flex-direction: column; gap: 8px; align-items: center; text-align: center; }
+    .services-note{ padding-left: 24px; padding-right: 24px; }
+    .quote-intro{ text-align: center; }
+    .quote-intro > p{ margin-left: auto; margin-right: auto; }
+    .form-card{ padding-top: 32px; padding-bottom: 32px; padding-left: 20px; padding-right: 20px; }
+    .choices{ grid-template-columns: 1fr; gap: 8px; }
+    .field-row{ grid-template-columns: 1fr; gap: 0; }
+    .step legend{ font-size: 28px; }
+    .road-step{ padding-left: 64px; padding-top: 28px; padding-bottom: 28px; }
+    .road-step b{ top: 28px; width: 44px; height: 44px; }
+    .road-step h3{ font-size: 28px; }
+    .fleet-card img{ aspect-ratio: 2 / 1; }
+    .fleet-body{ text-align: center; }
+    .fleet-card ul{ justify-content: center; }
+    .form-nav{ margin-top: 24px; }
+    .fleet-body{ padding-top: 24px; padding-bottom: 24px; padding-left: 24px; padding-right: 24px; }
+    .gallery-grid{ grid-template-columns: 1fr 1fr; grid-auto-rows: 160px; gap: 8px; }
+    .gallery-grid .big{ grid-column: 1 / -1; grid-row: span 2; }
+    .gallery-grid .wide{ grid-column: auto; grid-row: auto; }
+    .gallery-grid .shot:last-child{ grid-column: 1 / -1; }
+    .shot figcaption{ padding-left: 8px; padding-right: 8px; padding-bottom: 8px; padding-top: 32px; }
+    .shot figcaption small{ display: none; }
+    .shot figcaption span{ font-size: 16px; }
+    .prod-grid{ gap: 8px; }
+    .ref-list{ grid-template-columns: 1fr; gap: 32px; margin-top: 56px; }
+    .ref-list h3{ text-align: center; }
+    .about-photo{ height: 280px; }
+    .about-text{ text-align: center; }
+    .about-text > p{ margin-left: auto; margin-right: auto; }
+    .gm{ margin-top: 64px; }
+    .gm-text{ padding-top: 32px; padding-bottom: 40px; padding-left: 24px; padding-right: 24px; text-align: center; }
+    .gm-text p{ margin-left: auto; margin-right: auto; }
+    .final-contacts{ grid-template-columns: 1fr; margin-top: 64px; }
+    .final-contacts > *{ padding-bottom: 24px; padding-top: 24px; }
+    .final-contacts > * + *{ padding-left: 0; border-left: none; border-top: 1px solid var(--line-dark); margin-top: 0 !important; }
+    .final-actions .btn{ width: 100%; }
+    .mobile-bar{ display: grid; }
+    footer{ padding-bottom: 112px; }
+    footer nav{ display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; }
+  }
+  @media (max-width: 480px){
+    .form-nav{ flex-wrap: wrap; }
+    .form-nav .btn{ width: 100%; padding-left: 16px; padding-right: 16px; }
+    .form-nav .spacer{ display: none; }
+    .form-nav #prevBtn{ order: 2; margin-left: auto; margin-right: auto; }
+    .hero-actions .btn{ width: 100%; padding-left: 20px; padding-right: 20px; }
+    .hero-actions{ flex-direction: column; align-items: stretch; }
+    .hero-actions .hero-call{ align-self: center; }
+    .mobile-menu a.mm-link{ font-size: 32px; }
+    .mobile-menu .btn{ align-self: stretch; padding-left: 16px; padding-right: 16px; font-size: 16px; }
+  }
+  @media (max-width: 360px){
+    .hero-actions .btn{ font-size: 16px; }
+  }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+<meta property="og:type" content="website">
+<meta property="og:title" content="AR Gradnja · niskogradnja, asfalt i beton, Beograd">
+<meta property="og:description" content="Od 1991. gradimo saobraćajnice, parkinge i infrastrukturu. Sopstveni asfalt, beton i mehanizacija. Pošaljite upit za projekat.">
+<meta property="og:image" content="https://sites.entro-websites.com/argradnja/assets/og.jpg">
+<meta property="og:url" content="https://sites.entro-websites.com/argradnja/">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"GeneralContractor","name":"AR Gradnja d.o.o.",
+ "url":"https://sites.entro-websites.com/argradnja/",
+ "image":"https://sites.entro-websites.com/argradnja/assets/og.jpg",
+ "logo":"https://sites.entro-websites.com/argradnja/assets/logo.png",
+ "telephone":"+381112399363","email":"office@argradnja.com","foundingDate":"1991-01-11",
+ "founder":{"@type":"Person","name":"Aca Radonjić"},
+ "address":{"@type":"PostalAddress","streetAddress":"Vodovodska 162a","postalCode":"11147","addressLocality":"Beograd","addressCountry":"RS"},
+ "areaServed":["Beograd","Gornji Milanovac"]}
+</script>
+</head>
+<body id="top">
+
+<header id="site-header">
+  <div class="wrap nav-wrap">
+    <a href="#top" class="logo" aria-label="AR Gradnja, na vrh">
+      <img class="logo-dark" src="assets/logo.png" alt="AR Gradnja" width="158" height="88">
+      <img class="logo-light" src="assets/logo-svetli.png" alt="" width="158" height="88" aria-hidden="true">
+    </a>
+    <nav class="desktop-nav" aria-label="Glavni meni">
+      <a href="#usluge">Usluge</a>
+      <a href="#reference">Reference</a>
+      <a href="#mehanizacija">Mehanizacija</a>
+      <a href="#o-nama">O nama</a>
+    </nav>
+    <div class="header-cta">
+      <a href="tel:+38163664040" class="header-phone">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1.1.4 2.1.7 3.1a2 2 0 0 1-.5 2.1L8 10.1a16 16 0 0 0 6 6l1.2-1.3a2 2 0 0 1 2.1-.5c1 .3 2 .6 3.1.7a2 2 0 0 1 1.6 2Z"/></svg>
+        063 664 040
+      </a>
+      <a href="#upit" class="btn btn-primary">Pošaljite upit</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Otvori meni" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#usluge" class="mm-link">Usluge</a>
+  <a href="#reference" class="mm-link">Reference</a>
+  <a href="#mehanizacija" class="mm-link">Mehanizacija</a>
+  <a href="#o-nama" class="mm-link">O nama</a>
+  <a href="#upit" class="btn btn-primary">Pošaljite upit za projekat</a>
+  <a href="tel:+38163664040" class="mm-phone">ili pozovite <b>063 664 040</b></a>
+</div>
+
+<main>
+<!-- 1. HERO -->
+<section class="hero dark" id="pocetna">
+  <div class="wrap">
+    <div class="hero-grid">
+      <figure class="hero-media" id="heroMedia">
+        <div class="kota kota-h" aria-hidden="true"><span class="ln"></span><span class="lbl">Beograd · Autokomanda</span></div>
+        <div class="kota kota-v" aria-hidden="true"><span class="ln"></span></div>
+        <div class="hero-photo">
+          <img src="assets/hero-autokomanda.jpg" width="1440" height="810" fetchpriority="high"
+               alt="Snimak iz drona: AR Gradnja gradi saobraćajnice i parking uz autoput kod Autokomande u Beogradu, na terenu valjci, kiperi i finišer">
+          <span class="sheen" aria-hidden="true"></span>
+        </div>
+        <figcaption>Saobraćajnice i parking uz autoput, Autokomanda</figcaption>
+      </figure>
+
+      <div class="hero-copy">
+        <span class="hero-kicker">Niskogradnja · Beograd<span class="k2">i Gornji Milanovac</span></span>
+        <h1><span>Gradimo puteve</span> <span class="hl">koji traju.</span></h1>
+        <p class="lead"><span class="s">Od 1991. gradimo saobraćajnice, parkinge i infrastrukturu za grad, javna preduzeća i investitore kao što su Mercedes-Benz i Tetra Pak.</span> <span class="s">Asfalt i beton proizvodimo sami, a mašine su naše.</span></p>
+        <div class="hero-actions">
+          <a href="#upit" class="btn btn-primary">
+            Pošaljite upit za projekat
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="square"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="tel:+38163664040" class="hero-call">
+            <span><small>ili pozovite odmah</small>063 664 040</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat"><strong>1977<i>.</i></strong><span>počeli kao porodična zanatsko-građevinska radnja</span></div>
+      <div class="hero-stat"><strong>100.000<i>+</i></strong><span>kubnih metara proizvedenog i izlivenog betona</span></div>
+      <div class="hero-stat"><strong>60</strong><span>projekata u referenc listi, od Delta City do mosta u Prigrevici</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="hazard" aria-hidden="true"></div>
+
+<!-- Klijenti -->
+<div class="clients" id="klijenti">
+  <div class="wrap clients-row">
+    <div class="clients-label">Radili smo za</div>
+    <div class="marquee">
+      <div class="marquee-track">
+        <img src="assets/k-mercedes.png" width="194" height="128" alt="Mercedes-Benz">
+        <img src="assets/k-tetrapak.png" width="128" height="128" class="tall" alt="Tetra Pak">
+        <img src="assets/k-afi.png" width="400" height="112" alt="AFI Europe Serbia">
+        <img src="assets/k-gds.png" width="400" height="118" alt="Građevinska direkcija Srbije">
+        <img src="assets/k-beograd.png" width="107" height="128" class="tall" alt="Grad Beograd">
+        <img src="assets/k-energoprojekt.png" width="400" height="40" alt="Energoprojekt">
+        <img src="assets/k-gm.png" width="109" height="128" class="tall" alt="Opština Gornji Milanovac">
+        <img src="assets/k-bvk.png" width="117" height="128" alt="JKP Beogradski vodovod i kanalizacija">
+        <img src="assets/k-ministarstvo.png" width="199" height="128" class="tall" alt="Ministarstvo privrede Republike Srbije">
+        <img src="assets/k-jkp.png" width="400" height="98" alt="JKP Pogrebne usluge Beograd">
+        <img src="assets/k-immo.png" width="244" height="128" alt="IMMO Outlet centar">
+        <img src="assets/bermilton_pm-1.svg" width="160" height="48" alt="Bermilton">
+        <!-- duplikat za neprekidnu traku -->
+        <img src="assets/k-mercedes.png" width="194" height="128" alt="" aria-hidden="true">
+        <img src="assets/k-tetrapak.png" width="128" height="128" class="tall" alt="" aria-hidden="true">
+        <img src="assets/k-afi.png" width="400" height="112" alt="" aria-hidden="true">
+        <img src="assets/k-gds.png" width="400" height="118" alt="" aria-hidden="true">
+        <img src="assets/k-beograd.png" width="107" height="128" class="tall" alt="" aria-hidden="true">
+        <img src="assets/k-energoprojekt.png" width="400" height="40" alt="" aria-hidden="true">
+        <img src="assets/k-gm.png" width="109" height="128" class="tall" alt="" aria-hidden="true">
+        <img src="assets/k-bvk.png" width="117" height="128" alt="" aria-hidden="true">
+        <img src="assets/k-ministarstvo.png" width="199" height="128" class="tall" alt="" aria-hidden="true">
+        <img src="assets/k-jkp.png" width="400" height="98" alt="" aria-hidden="true">
+        <img src="assets/k-immo.png" width="244" height="128" alt="" aria-hidden="true">
+        <img src="assets/bermilton_pm-1.svg" width="160" height="48" alt="" aria-hidden="true">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 2. USLUGE -->
+<section class="section services" id="usluge">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="tag"><b>01</b>Šta radimo</span>
+      <h2>Od agregata do <span class="mark">gotovog puta.</span></h2>
+      <p><span class="s">Građevinski radovi, proizvodnja, trgovina i transport pod jednim krovom.</span> <span class="s">Za ceo projekat vam treba jedna firma, ne tri.</span></p>
+    </div>
+
+    <div class="services-grid">
+      <article class="service reveal">
+        <span class="service-num">01</span>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="square"><path d="M4 21 9 3M20 21 15 3"/><path d="M12 5v2M12 11v2M12 17v3"/></svg>
+        </div>
+        <h3>Niskogradnja</h3>
+        <p>Saobraćajnice, parkinzi i spoljna infrastruktura, od zemljanih radova do gotove površine.</p>
+        <ul>
+          <li>Izgradnja saobraćajnica</li>
+          <li>Zemljani radovi i nivelacija</li>
+          <li>Parkinzi i zelene površine</li>
+          <li>Vodovod i kanalizacija</li>
+        </ul>
+        <button type="button" class="btn-tertiary" data-service="niskogradnja">Tražite ponudu
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="square"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+        </button>
+      </article>
+
+      <article class="service reveal">
+        <span class="service-num">02</span>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="square"><path d="M3 18h13"/><path d="M5 18V11h6l2 3"/><ellipse cx="17" cy="10" rx="4" ry="5" transform="rotate(-25 17 10)"/><circle cx="7" cy="20" r="1.5"/><circle cx="15" cy="20" r="1.5"/></svg>
+        </div>
+        <h3>Asfalt i beton</h3>
+        <p>Asfaltnu masu i beton proizvodimo sami i ugrađujemo ih na vašem gradilištu.</p>
+        <ul>
+          <li>Proizvodnja i ugradnja asfalta</li>
+          <li>Sve marke betona, i pumpani</li>
+          <li>Sitnozrni beton, sa aditivima</li>
+          <li>Dovoz automikserom</li>
+        </ul>
+        <button type="button" class="btn-tertiary" data-service="asfalt">Tražite ponudu
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="square"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+        </button>
+      </article>
+
+      <article class="service reveal">
+        <span class="service-num">03</span>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="square"><rect x="3" y="13" width="8" height="7"/><rect x="13" y="13" width="8" height="7"/><rect x="8" y="5" width="8" height="7"/></svg>
+        </div>
+        <h3>Betonski elementi i agregat</h3>
+        <p>Proizvodnja i prodaja elemenata za niskogradnju, i agregat sa prevozom.</p>
+        <ul>
+          <li>Ivičnjaci i rigole, beli i sivi</li>
+          <li>Raster ploče, blokovi, kanalete</li>
+          <li>Šahte i slivnici</li>
+          <li>Šljunak, pesak, kameni agregat</li>
+        </ul>
+        <button type="button" class="btn-tertiary" data-service="elementi">Tražite ponudu
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="square"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+        </button>
+      </article>
+
+      <article class="service reveal">
+        <span class="service-num">04</span>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="square"><path d="M2 17V8h11v9"/><path d="M13 11h5l4 4v2h-9"/><path d="M2 17h2M9 17h6"/><circle cx="6.5" cy="17.5" r="2"/><circle cx="17.5" cy="17.5" r="2"/></svg>
+        </div>
+        <h3>Transport</h3>
+        <p>Više teretnih vozila za prevoz materijala, na gradilište ili na vašu lokaciju.</p>
+        <ul>
+          <li><a href="#mehanizacija" class="park-link">Ceo vozni park</a></li>
+        </ul>
+        <button type="button" class="btn-tertiary" data-service="transport">Tražite ponudu
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="square"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+        </button>
+      </article>
+    </div>
+
+    <div class="also reveal">
+      <h3>Radimo i</h3>
+      <p>betonske mostove, hidrotehničke objekte, regulaciju rečnih korita, gradska groblja, stambene i industrijske objekte i rušenje objekata.</p>
+    </div>
+
+    <div class="prod-grid reveal">
+      <figure class="shot">
+        <img src="assets/p-agregat.jpg" width="1000" height="562" loading="lazy" alt="Snimak iz drona: betonska baza AR Gradnje sa silosima i gomilama agregata">
+        <figcaption><small>Proizvodnja</small><span>Betonska baza i agregat</span></figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="assets/p-galanterija.jpg" width="1000" height="562" loading="lazy" alt="Palete betonskih ivičnjaka i elemenata spremne za ugradnju">
+        <figcaption><small>Betonski elementi</small><span>Ivičnjaci spremni za ugradnju</span></figcaption>
+      </figure>
+    </div>
+
+    <div class="services-note reveal">
+      <p>Projekat traži više stavki odjednom? <b>Opišite ga u tri koraka</b>, a mi se javljamo sa pitanjima ili ponudom.</p>
+      <a href="#upit" class="btn btn-primary">
+        Opišite projekat
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="square"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 3. UPIT -->
+<section class="section quote" id="upit">
+  <div class="wrap">
+    <div class="quote-intro reveal">
+      <span class="tag"><b>02</b>Upit za projekat</span>
+      <h2>Tri koraka. <span class="mark">Minut posla.</span></h2>
+      <p><span class="s">Recite nam šta gradite, gde i kada.</span> <span class="s">Javljamo se sa konkretnim pitanjima ili ponudom.</span></p>
+    </div>
+
+    <div class="quote-aside reveal">
+      <ul class="after">
+        <li>
+          <h3>Šaljete upit</h3>
+          <p>Vrsta radova, lokacija, rok i kontakt su dovoljni za početak.</p>
+        </li>
+        <li>
+          <h3>Javljamo vam se</h3>
+          <p>Razjasnimo obim radova i šta vam je potrebno.</p>
+        </li>
+        <li>
+          <h3>Dobijate ponudu</h3>
+          <p>Sa stavkama i rokovima za vaš projekat.</p>
+        </li>
+      </ul>
+
+      <div class="direct">
+        <a href="tel:+38163664040">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1.1.4 2.1.7 3.1a2 2 0 0 1-.5 2.1L8 10.1a16 16 0 0 0 6 6l1.2-1.3a2 2 0 0 1 2.1-.5c1 .3 2 .6 3.1.7a2 2 0 0 1 1.6 2Z"/></svg>
+          <div><small>Radije telefonom</small><span>063 664 040</span></div>
+        </a>
+        <a href="tel:+381112399363">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>
+          <div><small>Kancelarija</small><span>011 2399 363</span></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="form-card reveal">
+      <form id="quoteForm" data-forma="demo" novalidate>
+        <!-- DEMO FORMA: ne šalje podatke, samo pokazuje poruku o uspehu.
+             Posle kupovine poveži slanje na office@argradnja.com u funkciji posaljiUpit(). -->
+        <div class="progress" aria-hidden="true">
+          <div class="progress-steps"><span class="active"></span><span></span><span></span></div>
+          <div class="progress-text"><span>Korak <b id="stepNum">1</b> od 3</span><span id="stepName">Vrsta radova</span></div>
+        </div>
+
+        <fieldset class="step active" data-step="1" data-name="Vrsta radova">
+          <legend>Šta treba da uradimo?</legend>
+          <p class="step-hint">Označite sve što se odnosi na vaš projekat.</p>
+          <div class="choices">
+            <div class="choice">
+              <input type="checkbox" id="s-nisko" name="radovi" value="Put, saobraćajnica ili parking">
+              <label for="s-nisko"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="square"><path d="M4 21 9 3M20 21 15 3"/><path d="M12 5v2M12 11v2M12 17v3"/></svg>Put ili parking</label>
+            </div>
+            <div class="choice">
+              <input type="checkbox" id="s-asfalt" name="radovi" value="Asfalt ili beton">
+              <label for="s-asfalt"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="square"><path d="M3 18h13"/><path d="M5 18V11h6l2 3"/><ellipse cx="17" cy="10" rx="4" ry="5" transform="rotate(-25 17 10)"/><circle cx="7" cy="20" r="1.5"/><circle cx="15" cy="20" r="1.5"/></svg>Asfalt ili beton</label>
+            </div>
+            <div class="choice">
+              <input type="checkbox" id="s-infra" name="radovi" value="Vodovod, kanalizacija, infrastruktura">
+              <label for="s-infra"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="square"><path d="M3 8h8v8H3zM11 12h10"/><path d="M17 8v8"/></svg>Infrastruktura</label>
+            </div>
+            <div class="choice">
+              <input type="checkbox" id="s-elementi" name="radovi" value="Betonski elementi ili agregat">
+              <label for="s-elementi"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="square"><rect x="3" y="13" width="8" height="7"/><rect x="13" y="13" width="8" height="7"/><rect x="8" y="5" width="8" height="7"/></svg>Elementi i agregat</label>
+            </div>
+            <div class="choice">
+              <input type="checkbox" id="s-transport" name="radovi" value="Transport">
+              <label for="s-transport"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="square"><path d="M2 17V8h11v9"/><path d="M13 11h5l4 4v2h-9"/><path d="M2 17h2M9 17h6"/><circle cx="6.5" cy="17.5" r="2"/><circle cx="17.5" cy="17.5" r="2"/></svg>Transport</label>
+            </div>
+            <div class="choice">
+              <input type="checkbox" id="s-drugo" name="radovi" value="Nešto drugo">
+              <label for="s-drugo"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="square"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>Nešto drugo</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="step" data-step="2" data-name="Lokacija i rok">
+          <legend>Gde i kada?</legend>
+          <p class="step-hint">Okvirno je sasvim dovoljno.</p>
+          <div class="field">
+            <label class="field-label" for="lokacija">Lokacija radova</label>
+            <input type="text" id="lokacija" name="lokacija" placeholder="npr. Gornji Milanovac, industrijska zona" data-required>
+          </div>
+          <div class="field">
+            <span class="field-label">Ko je naručilac</span>
+            <div class="chips">
+              <div class="choice"><input type="radio" id="n-javni" name="narucilac" value="Opština / javno preduzeće"><label for="n-javni">Opština / javno preduzeće</label></div>
+              <div class="choice"><input type="radio" id="n-investitor" name="narucilac" value="Privatni investitor"><label for="n-investitor">Privatni investitor</label></div>
+              <div class="choice"><input type="radio" id="n-firma" name="narucilac" value="Firma / izvođač"><label for="n-firma">Firma / izvođač</label></div>
+            </div>
+          </div>
+          <div class="field">
+            <span class="field-label">Kada planirate početak</span>
+            <div class="chips">
+              <div class="choice"><input type="radio" id="r-odmah" name="rok" value="Odmah"><label for="r-odmah">Odmah</label></div>
+              <div class="choice"><input type="radio" id="r-13" name="rok" value="Za 1-3 meseca"><label for="r-13">Za 1-3 meseca</label></div>
+              <div class="choice"><input type="radio" id="r-kasnije" name="rok" value="Kasnije"><label for="r-kasnije">Kasnije</label></div>
+              <div class="choice"><input type="radio" id="r-plan" name="rok" value="Još planiramo"><label for="r-plan">Još planiramo</label></div>
+            </div>
+          </div>
+          <div class="field">
+            <label class="field-label" for="obim">Okvirni obim <em>(opciono)</em></label>
+            <input type="text" id="obim" name="obim" placeholder="npr. 1,2 km pristupnog puta ili 300 m³ betona">
+          </div>
+        </fieldset>
+
+        <fieldset class="step" data-step="3" data-name="Kontakt">
+          <legend>Kome da se javimo?</legend>
+          <p class="step-hint">Telefon je dovoljan. Mejl ako vam više odgovara pisano.</p>
+          <div class="field-row">
+            <div class="field">
+              <label class="field-label" for="ime">Ime i prezime</label>
+              <input type="text" id="ime" name="ime" autocomplete="name" placeholder="Vaše ime" data-required>
+            </div>
+            <div class="field">
+              <label class="field-label" for="firma">Firma / institucija <em>(opciono)</em></label>
+              <input type="text" id="firma" name="firma" autocomplete="organization" placeholder="Naziv">
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label class="field-label" for="telefon">Telefon</label>
+              <input type="tel" id="telefon" name="telefon" autocomplete="tel" placeholder="06x xxx xxxx" data-required>
+            </div>
+            <div class="field">
+              <label class="field-label" for="email">Email <em>(opciono)</em></label>
+              <input type="email" id="email" name="email" autocomplete="email" placeholder="ime@firma.rs">
+            </div>
+          </div>
+          <div class="field">
+            <label class="field-label" for="napomena">Još nešto što treba da znamo <em>(opciono)</em></label>
+            <textarea id="napomena" name="napomena" placeholder="Projektna dokumentacija, pristup terenu, posebni zahtevi..."></textarea>
+          </div>
+        </fieldset>
+
+        <p class="form-error" id="formError" role="alert"></p>
+
+        <div class="form-nav">
+          <button type="button" class="btn-tertiary" id="prevBtn" hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="square"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+            Nazad
+          </button>
+          <span class="spacer"></span>
+          <button type="button" class="btn btn-primary" id="nextBtn">
+            Dalje
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="square"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+          </button>
+          <button type="submit" class="btn btn-primary" id="submitBtn" hidden>
+            Pošaljite upit
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="square"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+        <button type="submit" class="btn btn-primary no-js-submit">Pošaljite upit</button>
+      </form>
+
+      <div class="form-done" id="formDone" role="status">
+        <div class="done-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="square"><path d="M4 12l5 5L20 6"/></svg></div>
+        <h3 tabindex="-1">Hvala, upit je primljen</h3>
+        <p>Odgovor ćete dobiti u što kraćem roku. Ako je hitno, pozovite <a href="tel:+38163664040">063 664 040</a>.</p>
+        <button type="button" class="btn-tertiary" id="restartBtn">Novi upit
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="square"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="hazard" aria-hidden="true"></div>
+
+<!-- 4. KAKO NASTAJE PUT (potpisna skrol scena) -->
+<section class="section dark" id="put">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="tag"><b>03</b>Kako nastaje put</span>
+      <h2>Četiri sloja. <span class="mark">Jedna firma.</span></h2>
+      <p><span class="s">Od posteljice do habajućeg sloja, svaki sloj rade naše mašine.</span> <span class="s">Materijal za njega pravimo sami.</span></p>
+    </div>
+
+    <div class="road-wrap">
+      <figure class="road-fig" id="roadFig" aria-label="Tehnički crtež: presek kolovozne konstrukcije u četiri sloja">
+        <div class="drawing-top"><span>Presek 1-1</span><span>Kolovozna konstrukcija</span></div>
+        <svg viewBox="0 0 560 320" fill="none" aria-hidden="true">
+          <defs>
+            <pattern id="dots" width="12" height="12" patternUnits="userSpaceOnUse">
+              <circle cx="3" cy="3" r="1.6" fill="#ecd92f" fill-opacity="0.55"/>
+              <circle cx="9" cy="9" r="1.2" fill="#ecd92f" fill-opacity="0.35"/>
+            </pattern>
+            <pattern id="hatch" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+              <line x1="0" y1="0" x2="0" y2="12" stroke="#ffffff" stroke-opacity="0.16" stroke-width="2"/>
+            </pattern>
+          </defs>
+
+          <g stroke="#ffffff" stroke-opacity="0.45" stroke-width="1">
+            <line x1="104" y1="40" x2="456" y2="40"/>
+            <line x1="104" y1="32" x2="104" y2="112"/>
+            <line x1="456" y1="32" x2="456" y2="112"/>
+            <line x1="98" y1="46" x2="110" y2="34"/>
+            <line x1="450" y1="46" x2="462" y2="34"/>
+          </g>
+          <text x="280" y="32" text-anchor="middle" fill="#ffffff" fill-opacity="0.6" font-family="Barlow Condensed, sans-serif" font-size="14" letter-spacing="2">ŠIRINA KOLOVOZA</text>
+          <line x1="280" y1="56" x2="280" y2="300" stroke="#ecd92f" stroke-width="1.5" stroke-dasharray="12 6 2 6"/>
+          <text x="288" y="68" fill="#ecd92f" font-family="Barlow Condensed, sans-serif" font-size="14" letter-spacing="2">OSA</text>
+
+          <g class="layer" data-l="4">
+            <path d="M72 214 L280 202 L488 214 L544 296 L16 296 Z" fill="url(#hatch)" stroke="#ffffff" stroke-opacity="0.35"/>
+          </g>
+          <g class="layer" data-l="3">
+            <path d="M84 178 L280 166 L476 178 L488 214 L280 202 L72 214 Z" fill="#26261f"/>
+            <path d="M84 178 L280 166 L476 178 L488 214 L280 202 L72 214 Z" fill="url(#dots)" stroke="#ffffff" stroke-opacity="0.35"/>
+          </g>
+          <g class="layer" data-l="2">
+            <path d="M100 160 L280 148 L460 160 L464 178 L280 166 L96 178 Z" fill="#3a3a33" stroke="#ffffff" stroke-opacity="0.35"/>
+          </g>
+          <g class="layer" data-l="1">
+            <path d="M104 148 L280 136 L456 148 L460 160 L280 148 L100 160 Z" fill="#ecd92f" stroke="#ecd92f"/>
+            <g stroke="#ffffff" stroke-opacity="0.6" stroke-width="1">
+              <line x1="150" y1="112" x2="230" y2="106"/>
+              <line x1="230" y1="106" x2="222" y2="102"/>
+              <line x1="410" y1="112" x2="330" y2="106"/>
+              <line x1="330" y1="106" x2="338" y2="102"/>
+            </g>
+            <text x="190" y="100" text-anchor="middle" fill="#ffffff" fill-opacity="0.6" font-family="Barlow Condensed, sans-serif" font-size="14">2,5%</text>
+            <text x="370" y="100" text-anchor="middle" fill="#ffffff" fill-opacity="0.6" font-family="Barlow Condensed, sans-serif" font-size="14">2,5%</text>
+          </g>
+
+          <g font-family="Barlow Condensed, sans-serif" font-size="13" font-weight="700" text-anchor="middle">
+            <g class="lbl-n" data-l="1"><line x1="440" y1="152" x2="516" y2="128" stroke="#ecd92f"/><rect x="508" y="116" width="24" height="24" fill="#131311" stroke="#ecd92f"/><text x="520" y="133" fill="#ecd92f">1</text></g>
+            <g class="lbl-n" data-l="2"><line x1="444" y1="168" x2="516" y2="164" stroke="#ecd92f"/><rect x="508" y="152" width="24" height="24" fill="#131311" stroke="#ecd92f"/><text x="520" y="169" fill="#ecd92f">2</text></g>
+            <g class="lbl-n" data-l="3"><line x1="120" y1="200" x2="44" y2="176" stroke="#ecd92f"/><rect x="28" y="164" width="24" height="24" fill="#131311" stroke="#ecd92f"/><text x="40" y="181" fill="#ecd92f">3</text></g>
+            <g class="lbl-n" data-l="4"><line x1="120" y1="260" x2="44" y2="240" stroke="#ecd92f"/><rect x="28" y="228" width="24" height="24" fill="#131311" stroke="#ecd92f"/><text x="40" y="245" fill="#ecd92f">4</text></g>
+          </g>
+          <line x1="0" y1="296" x2="560" y2="296" stroke="#ffffff" stroke-opacity="0.5" stroke-width="2"/>
+        </svg>
+      </figure>
+
+      <ol class="road-steps">
+        <li class="road-step" data-l="4">
+          <b>4</b>
+          <h3>Posteljica i nasip</h3>
+          <p>Iskop, nasipanje i nivelacija terena, da put ima čvrstu podlogu.</p>
+          <span class="m">Bageri, buldožeri, grejder, utovarivači</span>
+        </li>
+        <li class="road-step" data-l="3">
+          <b>3</b>
+          <h3>Nosivi sloj, tampon</h3>
+          <p>Separisani šljunak proizvodimo sami i dovozimo ga našim kiperima.</p>
+          <span class="m">Valjci, mašine za sabijanje, kiperi</span>
+        </li>
+        <li class="road-step" data-l="2">
+          <b>2</b>
+          <h3>Vezni sloj</h3>
+          <p>Asfaltnu masu proizvodimo i ugrađujemo sami.</p>
+          <span class="m">Radne mašine za asfalt, termo kontejneri</span>
+        </li>
+        <li class="road-step" data-l="1">
+          <b>1</b>
+          <h3>Habajući sloj</h3>
+          <p>Završni sloj po kome se vozi, uz ivičnjake, rigole i slivnike iz naše proizvodnje.</p>
+          <span class="m">Finišer, valjci, betonski elementi</span>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- 5. MEHANIZACIJA -->
+<section class="section fleet" id="mehanizacija">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="tag"><b>04</b>Mehanizacija</span>
+      <h2>Mašine su <span class="mark">naše.</span></h2>
+      <p><span class="s">Mašine, opremu i transport za sve poslove u građevinarstvu imamo u svom posedu.</span></p>
+    </div>
+    <div class="fleet-grid reveal">
+      <article class="fleet-card">
+        <img src="assets/m-bageri.jpg" width="1000" height="562" loading="lazy" alt="Utovarivač AR Gradnje na gradilištu pored gomile zemlje">
+        <div class="fleet-body">
+          <h3>Građevinske mašine</h3>
+          <ul><li>Bageri točkaši i guseničari</li><li>Buldožeri</li><li>Grejder</li><li>Valjci</li><li>Utovarivači</li><li>Mašine za asfalt</li><li>Tarupi</li><li>Agregati za struju</li></ul>
+        </div>
+      </article>
+      <article class="fleet-card">
+        <img src="assets/m-kamion.jpg" width="1000" height="592" loading="lazy" alt="Žuti kiper kamion sa natpisom AR Gradnja">
+        <div class="fleet-body">
+          <h3>Kamioni</h3>
+          <ul><li>Kiper kamioni</li><li>Tegljači</li><li>Kamioni mikseri</li><li>Pumpe za beton</li></ul>
+        </div>
+      </article>
+      <article class="fleet-card">
+        <img src="assets/m-tegljac.jpg" width="600" height="400" loading="lazy" alt="Tegljač AR Gradnje sa niskom poluprikolicom ispred silosa">
+        <div class="fleet-body">
+          <h3>Transport i ostalo</h3>
+          <ul><li>Poluprikolice</li><li>Prikolice</li><li>Cisterne</li><li>Dostavna vozila</li><li>Viljuškari</li><li>Termo kontejneri</li></ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="hazard" aria-hidden="true"></div>
+
+<!-- 6. REFERENCE -->
+<section class="section" id="reference">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="tag"><b>05</b>Reference</span>
+      <h2>Radovi koji se <span class="mark">voze svaki dan.</span></h2>
+      <p><span class="s">Saobraćajnice, parkinzi i infrastruktura u Beogradu, Gornjem Milanovcu i širom Srbije.</span> <span class="s">Ovo su naše fotografije sa terena.</span></p>
+    </div>
+    <div class="gallery-grid reveal">
+      <figure class="shot big">
+        <img src="assets/r-parking.jpg" width="1200" height="675" loading="lazy" alt="Snimak iz drona: dva valjka AR Gradnje valjaju nov asfalt na velikom parkingu">
+        <figcaption><small>Parking</small><span>Valjanje asfalta na parkingu</span></figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="assets/r-srezojevci.jpg" width="800" height="600" loading="lazy" alt="Radnici AR Gradnje asfaltiraju lokalni put u Srezojevcima finišerom">
+        <figcaption><small>Gornji Milanovac</small><span>Asfaltiranje, Srezojevci</span></figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="assets/r-valjak.jpg" width="1000" height="562" loading="lazy" alt="Valjak sa natpisom AR Gradnja valja tek položen asfalt">
+        <figcaption><small>Asfalt</small><span>Valjanje novog kolovoza</span></figcaption>
+      </figure>
+      <figure class="shot wide">
+        <img src="assets/r-lokalni-put.jpg" width="1000" height="625" loading="lazy" alt="Valjak AR Gradnje na novom asfaltu lokalnog puta pored kukuruzišta">
+        <figcaption><small>Lokalni put</small><span>Nov asfalt na seoskom putu</span></figcaption>
+      </figure>
+      <figure class="shot wide">
+        <img src="assets/r-finiser.jpg" width="1000" height="562" loading="lazy" alt="Kiper AR Gradnje istresa asfalt u finišer na parkingu u izgradnji">
+        <figcaption><small>Parking</small><span>Kiper i finišer na parkingu</span></figcaption>
+      </figure>
+      <figure class="shot wide">
+        <img src="assets/r-naselje.jpg" width="1000" height="749" loading="lazy" alt="Snimak iz drona: stambeni blok sa novim ulicama i uređenim dvorištem">
+        <figcaption><small>Stambeni blok</small><span>Ulice i uređenje naselja</span></figcaption>
+      </figure>
+    </div>
+
+    <div class="ref-list reveal">
+      <div>
+        <h3>Saobraćajnice i parkinzi</h3>
+        <ul>
+          <li>Javne saobraćajnice S1 i S2 uz „Delta City“, Beograd</li>
+          <li>Studentska ulica, Novi Beograd</li>
+          <li>Ulica Vojvode Stepe</li>
+          <li>Parking objekta „Tempo“, Novi Beograd</li>
+          <li>Naselje Kosa kvart</li>
+          <li>Lokalni putevi oko Gornjeg Milanovca i Ljiga</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Infrastruktura</h3>
+        <ul>
+          <li>Magistralni vodovod Mačkov kamen - Torlak</li>
+          <li>Mokroluški kolektor</li>
+          <li>Most u Prigrevici kod Apatina</li>
+          <li>Vodovodni rezervoari na Straževici</li>
+          <li>Podzemna garaža u Pionirskom parku</li>
+          <li>Toplana Cerak</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Privreda i investitori</h3>
+        <ul>
+          <li>Mercedes-Benz, Novi Beograd i Krnješevci</li>
+          <li>Tetra Pak</li>
+          <li>Naselje Zemunske kapije</li>
+          <li>Stop Shop Gornji Milanovac, Bermilton</li>
+          <li>Fabrika vode „Aqua Gala“, Mionica</li>
+          <li>Skyline Beograd</li>
+        </ul>
+      </div>
+    </div>
+    <p class="ref-more reveal" style="max-width:none">i još <b>42</b> projekta u referenc listi</p>
+
+    <div class="quote-card reveal">
+      <div class="stars" aria-label="5 od 5 zvezdica">
+        <svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg>
+      </div>
+      <blockquote>„Veoma profesionalna firma, sve odrađeno kao po dogovoru i to pre roka.“</blockquote>
+      <cite><b>Mihajlo Micić</b> · Google recenzija</cite>
+    </div>
+  </div>
+</section>
+
+<!-- 7. O NAMA -->
+<section class="section about" id="o-nama">
+  <div class="wrap">
+    <div class="about-photo reveal">
+      <img src="assets/o-baza.jpg" width="1200" height="675" loading="lazy" alt="Snimak iz drona: baza AR Gradnje sa halama, mehanizacijom i dvorištem">
+    </div>
+    <div class="about-text reveal">
+      <span class="tag"><b>06</b>O nama</span>
+      <h2>Porodična firma koja gradi <span class="mark">puteve.</span></h2>
+      <p><span class="s">Aca Radonjić je 1977. otvorio zanatsko-građevinsku radnju, sa željom da to bude porodična firma koja će se probiti isključivo kvalitetom.</span> <span class="s">Iz nje je 1991. nastala AR Gradnja, a on je i danas vlasnik i direktor.</span></p>
+    </div>
+  </div>
+  <div class="wrap gm-wrap">
+    <div class="gm reveal">
+      <img src="assets/o-gm.jpg" width="1000" height="562" loading="lazy" alt="Snimak iz drona: baza AR Gradnje u Gornjem Milanovcu sa silosima i kamionima">
+      <div class="gm-text">
+        <span class="gm-tag">Naša druga baza</span>
+        <h3>Gornji Milanovac</h3>
+        <span class="slogan">„Putevi nas spajaju“</span>
+        <p><span class="s">Tim u Gornjem Milanovcu radi istim standardom kao u Beogradu.</span> <span class="s">Gradimo lokalne i nekategorisane puteve, spoljnu infrastrukturu i gradske saobraćajnice.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. ZAVRŠNI CTA I KONTAKT -->
+<section class="section dark final" id="kontakt">
+  <div class="wrap">
+    <span class="tag"><b>07</b>Kontakt</span>
+    <h2>Imate projekat <span class="mark">na stolu?</span></h2>
+    <p><span class="s">Pošaljite nam lokaciju, vrstu radova i rok, ili pozovite.</span> <span class="s">Odgovor ćete dobiti u što kraćem roku.</span></p>
+    <div class="final-actions">
+      <a href="#upit" class="btn btn-primary">
+        Pošaljite upit za projekat
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="square"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="tel:+38163664040" class="btn btn-secondary">Pozovite 063 664 040</a>
+    </div>
+    <div class="final-contacts">
+      <a href="tel:+38163664040">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg>
+        <div><small>Mobilni</small><span>063 664 040</span></div>
+      </a>
+      <a href="tel:+381112399363">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1.1.4 2.1.7 3.1a2 2 0 0 1-.5 2.1L8 10.1a16 16 0 0 0 6 6l1.2-1.3a2 2 0 0 1 2.1-.5c1 .3 2 .6 3.1.7a2 2 0 0 1 1.6 2Z"/></svg>
+        <div><small>Kancelarija</small><span>011 2399 363</span></div>
+      </a>
+      <a href="mailto:office@argradnja.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="1"/><path d="m2 7 10 6 10-6"/></svg>
+        <div><small>Email</small><span>office@argradnja.com</span></div>
+      </a>
+      <div>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div><small>Sedište</small><span>Vodovodska 162a</span><em>11147 Beograd, Žarkovo</em><em>Baza i u Gornjem Milanovcu</em></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-wrap">
+    <a href="#top" class="footer-logo" aria-label="AR Gradnja, na vrh"><img src="assets/logo-svetli.png" alt="AR Gradnja" width="158" height="88"></a>
+    <nav aria-label="Futer meni">
+      <a href="#usluge">Usluge</a>
+      <a href="#reference">Reference</a>
+      <a href="#mehanizacija">Mehanizacija</a>
+      <a href="#o-nama">O nama</a>
+    </nav>
+    <div class="footer-info">
+      <p>Vodovodska 162a, Beograd</p>
+      <p>063 664 040 · 011 2399 363</p>
+      <p>© 2026 AR Gradnja d.o.o.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-bar" id="mobileBar">
+  <a href="#kontakt" data-poziv="+38163664040" class="mb-call" aria-label="Pozovite AR Gradnja">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1.1.4 2.1.7 3.1a2 2 0 0 1-.5 2.1L8 10.1a16 16 0 0 0 6 6l1.2-1.3a2 2 0 0 1 2.1-.5c1 .3 2 .6 3.1.7a2 2 0 0 1 1.6 2Z"/></svg>
+    Pozovite
+  </a>
+  <a href="#upit" class="mb-quote">Pošaljite upit</a>
+</div>
+
+<script>
+  /* Dugme bez broja u tekstu: na telefonu postaje poziv */
+  if (matchMedia('(pointer:coarse)').matches)
+    document.querySelectorAll('[data-poziv]').forEach(a => a.href = 'tel:' + a.dataset.poziv);
+
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Meni */
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  function setMenu(open){
+    hamburger.classList.toggle('open', open);
+    mobileMenu.classList.toggle('open', open);
+    document.body.classList.toggle('menu-open', open);
+    hamburger.setAttribute('aria-expanded', open);
+    hamburger.setAttribute('aria-label', open ? 'Zatvori meni' : 'Otvori meni');
+  }
+  hamburger.addEventListener('click', () => setMenu(!mobileMenu.classList.contains('open')));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+
+  /* Hero: kote se iscrtaju po ivici fotografije */
+  const heroMedia = document.getElementById('heroMedia');
+  requestAnimationFrame(() => requestAnimationFrame(() => heroMedia.classList.add('drawn')));
+
+  /* Header i mobilna traka (sakrije se kod forme i kontakta) */
+  const header = document.getElementById('site-header');
+  const bar = document.getElementById('mobileBar');
+  const hero = document.getElementById('pocetna');
+  const quote = document.getElementById('upit');
+  const hidden = new Set();
+  function onScroll(){
+    header.classList.toggle('scrolled', window.scrollY > 20);
+    const pastHero = hero.getBoundingClientRect().bottom < 0;
+    bar.classList.toggle('show', pastHero && hidden.size === 0);
+  }
+  if ('IntersectionObserver' in window){
+    const barIo = new IntersectionObserver(es => {
+      es.forEach(e => e.isIntersecting ? hidden.add(e.target.id) : hidden.delete(e.target.id));
+      onScroll();
+    }, { threshold: 0.05 });
+    [quote, document.getElementById('kontakt')].forEach(el => barIo.observe(el));
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* Reveal: sadržaj je vidljiv i bez JS-a */
+  if ('IntersectionObserver' in window){
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(en => { if (en.isIntersecting){ en.target.classList.add('is-visible'); io.unobserve(en.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+  }
+
+  /* Kako nastaje put: slojevi se slažu odozdo (4 → 1) */
+  const roadFig = document.getElementById('roadFig');
+  const roadSteps = [...document.querySelectorAll('.road-step')];
+  let shown = 0;
+  function setLayers(n){
+    if (n <= shown) return;
+    shown = n;
+    roadFig.querySelectorAll('[data-l]').forEach(el => el.classList.toggle('on', +el.dataset.l > 4 - n));
+    roadSteps.forEach(s => s.classList.toggle('on', +s.dataset.l > 4 - n));
+  }
+  if (reduce || !('IntersectionObserver' in window)){
+    setLayers(4);
+  } else if (matchMedia('(min-width: 901px)').matches){
+    /* desktop: crtež stoji, slojevi prate skrol kroz korake */
+    setLayers(1);
+    const stepIo = new IntersectionObserver(es => {
+      es.forEach(e => { if (e.isIntersecting) setLayers(5 - +e.target.dataset.l); });
+    }, { rootMargin: '-40% 0px -40% 0px' });
+    roadSteps.forEach(s => stepIo.observe(s));
+  } else {
+    /* telefon: kad crtež uđe u ekran, slojevi se slože jedan za drugim */
+    const figIo = new IntersectionObserver(es => {
+      if (!es[0].isIntersecting) return;
+      figIo.disconnect();
+      [1, 2, 3, 4].forEach((n, i) => setTimeout(() => setLayers(n), 300 + i * 600));
+    }, { threshold: 0.4 });
+    figIo.observe(roadFig);
+  }
+
+  /* Forma u tri koraka (DEMO: ne šalje podatke) */
+  function posaljiUpit(podaci){ /* TODO posle kupovine: slanje na office@argradnja.com */ return Promise.resolve(); }
+
+  const form = document.getElementById('quoteForm');
+  const steps = [...form.querySelectorAll('.step')];
+  const bars = [...form.querySelectorAll('.progress-steps span')];
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const submitBtn = document.getElementById('submitBtn');
+  const errorEl = document.getElementById('formError');
+  const done = document.getElementById('formDone');
+  let current = 0;
+
+  function showStep(i){
+    current = i;
+    steps.forEach((s, n) => s.classList.toggle('active', n === i));
+    bars.forEach((b, n) => { b.classList.toggle('done', n < i); b.classList.toggle('active', n === i); });
+    document.getElementById('stepNum').textContent = i + 1;
+    document.getElementById('stepName').textContent = steps[i].dataset.name;
+    prevBtn.hidden = i === 0;
+    nextBtn.hidden = i === steps.length - 1;
+    submitBtn.hidden = i !== steps.length - 1;
+    errorEl.classList.remove('show');
+  }
+
+  function validate(i){
+    const step = steps[i];
+    let msg = '';
+    let first = null;
+    step.querySelectorAll('.field').forEach(f => f.classList.remove('invalid'));
+    if (i === 0 && !step.querySelector('input:checked')){
+      msg = 'Označite bar jednu vrstu radova.';
+      first = step.querySelector('input');
+    }
+    step.querySelectorAll('[data-required]').forEach(inp => {
+      const bad = !inp.value.trim() || (inp.type === 'tel' && inp.value.replace(/\D/g, '').length < 6);
+      if (bad){
+        inp.closest('.field').classList.add('invalid');
+        if (!msg) msg = inp.value.trim() ? 'Upišite ceo broj telefona.' : 'Popunite označena polja da bismo mogli da vam se javimo.';
+        if (!first) first = inp;
+      }
+    });
+    errorEl.textContent = msg;
+    errorEl.classList.toggle('show', !!msg);
+    if (first && i > 0) first.focus();
+    return !msg;
+  }
+
+  nextBtn.addEventListener('click', () => { if (validate(current)) showStep(current + 1); });
+  prevBtn.addEventListener('click', () => showStep(current - 1));
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    if (!validate(current)) return;
+    if (current < steps.length - 1){ showStep(current + 1); return; }
+    posaljiUpit(Object.fromEntries(new FormData(form))).then(() => {
+      form.reset();
+      form.style.display = 'none';
+      done.classList.add('show');
+      done.scrollIntoView({ block: 'center', behavior: reduce ? 'auto' : 'smooth' });
+      done.querySelector('h3').focus({ preventScroll: true });
+    });
+  });
+
+  document.getElementById('restartBtn').addEventListener('click', () => {
+    form.style.display = '';
+    done.classList.remove('show');
+    showStep(0);
+  });
+
+  /* „Tražite ponudu" na uslugama unapred označi uslugu u formi */
+  const serviceMap = { niskogradnja: 's-nisko', asfalt: 's-asfalt', elementi: 's-elementi', transport: 's-transport' };
+  document.querySelectorAll('[data-service]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const box = document.getElementById(serviceMap[btn.dataset.service]);
+      form.style.display = '';
+      done.classList.remove('show');
+      if (box) box.checked = true;
+      showStep(0);
+      quote.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
+    });
+  });
+</script>
+
+</body>
+</html>
